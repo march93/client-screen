@@ -1,0 +1,8 @@
+# env files
+.env
+
+# node modules
+node_modules
+
+# js compiled files
+dist
