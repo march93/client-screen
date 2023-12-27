@@ -7,6 +7,7 @@ class App {
   constructor() {
     // Initialize express server
     this.server = express();
+    console.log('here');
 
     // Initialize middleware and routes
     this.middlewares();
@@ -22,4 +23,4 @@ class App {
   }
 }
 
-export default new App().server;
+export default App;
