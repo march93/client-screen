@@ -7,6 +7,7 @@ class App {
   constructor() {
     // Initialize express server
     this.server = express();
+    console.log('here');
 
     // Initialize middleware and routes
     this.middlewares();
