@@ -50,7 +50,6 @@ const analyze = (
   }
 
   data[1].forEach((f: any) => {
-    console.log(f);
     // Set name flag to true if we find a case with a matching name
     if (!result.name && f.fullName.toLowerCase() === name) {
       result.name = true;
