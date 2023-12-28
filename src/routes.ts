@@ -8,7 +8,7 @@ const routes = Router();
 
 interface SearchParams {
   name: string;
-  birthdate: string;
+  birthyear: number;
   country: string;
 }
 
@@ -34,19 +34,19 @@ routes.post('/search', async (req, res) => {
 const isInvalid = (
   req: Request<{}, any, any, ParsedQs, Record<string, any>>
 ) => {
-  const { name, birthdate, country } = req.body;
+  const { name, birthyear, country } = req.body;
 
-  if (name === undefined || birthdate === undefined || country === undefined) {
+  if (name === undefined || birthyear === undefined || country === undefined) {
     return true;
   }
 
   return false;
 };
 
-const transform = ({ name, birthdate, country }: SearchParams) => {
+const transform = ({ name, birthyear, country }: SearchParams) => {
   // Destructure and format birthdate to YYYY-MM-DD
   // Set to local time to fetch proper date
-  const date = new Date(birthdate + 'T00:00');
+  const date = new Date(birthyear + 'T00:00');
   const dob = `${date.getFullYear()}-${getTwoDigits(
     date.getMonth() + 1
   )}-${getTwoDigits(date.getDate())}`;

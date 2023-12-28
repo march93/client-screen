@@ -56,8 +56,8 @@ const analyze = (
     }
 
     // Convert given dob and matches dob to date and compare
-    const givenDOB = new Date(dob);
-    const matchesDOB = new Date(f.dob);
+    const givenDOB = new Date(dob + 'T00:00');
+    const matchesDOB = new Date(f.dob + 'T00:00');
     if (!result.dob && dateComparison(givenDOB, matchesDOB)) {
       result.dob = true;
     }
